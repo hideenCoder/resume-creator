@@ -25,6 +25,6 @@
                                    html: '<p>Your email body..</p>'// plain text body
  
 # 11. open the Cloned folder path in terminal.
-# 12. execute this command npm i
+# 12. execute this command      npm i
 
 # FINALLY. project should be Running Successfully.
