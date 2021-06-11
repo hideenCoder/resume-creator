@@ -53,13 +53,13 @@ app.post('/register', async (req, res) => {
                             const transporter = nodemailer.createTransport({
                                 service: 'gmail',
                                 auth: {
-                                    user: 'prroy226@gmail.com',
-                                    pass: 'pallab4321'
+                                    user: 'your gmail id',
+                                    pass: 'your gmail password'
                                 }
                             });
 
                             const mailOptions = {
-                                from: 'prroy226@email.com', // sender address
+                                from: 'your gmail id', // sender address
                                 to: email, // list of receivers
                                 subject: 'Team Hidden_Coder from Resume Creator', // Subject line
                                 html: '<p>You are registerd sucessfully</p>'// plain text body
