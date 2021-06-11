@@ -10,8 +10,10 @@
       password VARCHAR(100) NOT NULL,
       image VARCHAR(50) NOT NULL,
 
-# 7. Open the app.js in wich is in the clone directory.
-# 8. At the down below there is a app.post('/register'.... section, in which change in the transporter section..
+# 7. Open the mysqlConn.js which is in the db foder in cloned directory.
+# 8. make the password: '', blank.
+# 9. Open the app.js wich is in the cloned directory.
+# 10. At the down below there is a app.post('/register'.... section, in which change in the transporter section..
                                    auth: {
                                    user: 'your gmail id',
                                    pass: 'your email password'
@@ -22,7 +24,7 @@
                                    subject: 'Your Subject', // Subject line
                                    html: '<p>Your email body..</p>'// plain text body
  
-# 9. open the Cloned folder path in terminal.
-# 10. execute this command npm i
+# 11. open the Cloned folder path in terminal.
+# 12. execute this command npm i
 
 # FINALLY. project should be Running Successfully.
