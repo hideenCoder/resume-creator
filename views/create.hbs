@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home||Resume Maker</title>
+    <link rel="stylesheet" href="/public/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/style.css">
+    <script src="/public/bootstrap-4.5.3-dist/jquery.js"></script>
+    <script src="/public//bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    {{#with user}}
+    <section class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand d-flex" href="/home"><img src="/public/images/logo.png" alt="" width="30"
+                    height="30">
+                <div class="d-flex flex-column mx-2">
+                    <span>Resume</span>
+                    <small style="font-size: small; text-align: right; line-height: 0; color: #459db1;">creator</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex align-items-center justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="/create">Create Resume<span
+                            class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="/readfile">Readfile</a>
+                    <a class="nav-item nav-link" href="/logout">Logout</a>
+                    <a class="nav-item nav-link" href="#">{{name}}</a>
+                    <a class="nav-item nav-link" href="#"><img src="/public/images/uploaded_images/{{image}}" alt=""
+                            width="30" height="30"></a>
+                </div>
+
+            </div>
+        </nav>
+        <section class="container">
+            <div class="frm" id="frms">
+                <center>
+                    <h2>Fill The Form</h2>
+                </center>
+                <section>
+                    <div class="container" style="padding:30px;">
+                        <div class="row">
+                            <div class="col col-lg-4">
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-lg-7">
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">About You</label>
+                                    <input type="text" class="form-control" id="about">
+                                </div>
+                            </div>
+
+                            <div class="col col-lg-4">
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+
+                                </div>
+                            </div>
+                            <div class="col col-lg-7">
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Education</label>
+                                    <input type="text" class="form-control" id="edu">
+                                </div>
+                            </div>
+                            <div class="col col-lg-4">
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Marks</label>
+                                    <input type="text" class="form-control" id="mark" aria-describedby="emailHelp">
+
+                                </div>
+                            </div>
+                            <div class="col col-lg-7">
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Skilss</label>
+                                    <input type="text" class="form-control" id="skill">
+                                </div>
+                            </div>
+                            <div class="col col-lg-4">
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Hobbies</label>
+                                    <input type="text" class="form-control" id="hobby" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                            <div class="col col-lg-7">
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Experience</label>
+                                    <input type="text" class="form-control" id="exper">
+                                </div>
+                            </div>
+                            <div class="col col-lg-4">
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Languages</label>
+                                    <input type="text" class="form-control" id="lan" aria-describedby="emailHelp">
+
+                                </div>
+                            </div>
+                            <div class="col col-lg-7">
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Projects</label>
+                                    <input type="text" class="form-control" id="project">
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="confirm" onclick="makeMyresume()">SUBMIT</button>
+                </section>
+            </div>
+
+            <div id="sample"></div>
+
+
+
+
+
+
+        </section>
+    </section>
+    <script>
+        function makeMyresume() {
+            document.getElementById("frms").style.display = "none"
+
+            var mail = document.getElementById("email").value;
+            var about = document.getElementById("about").value;
+            var name = document.getElementById("name").value;
+            var edu = document.getElementById("edu").value;
+            var mark = document.getElementById("mark").value;
+            var skill = document.getElementById("skill").value;
+            var hobby = document.getElementById("hobby").value;
+            var exper = document.getElementById("exper").value;
+            var lan = document.getElementById("lan").value;
+            var pro = document.getElementById("project").value;
+
+
+            document.getElementById("sample").innerHTML = `<button class="btn btn-primary mt-5 mb-3" onclick="changeFont()">Change Font</button><div class="theresume" id="resum"><div class="row"><div class="left-box col-md-4"><div class="top-left"><center style="margin:10px;"><img src="/public/images/uploaded_images/{{image}}" style="width:130px;height:130px;"alt="Avatar" class="avatar"></center><div class="name" id="nm">Name:${name}</div><div>Mail:${mail}</div><div style="margin:50px;"><div>About:${about}</div><div style="margin:20px;">Languages:${lan}</div><div style="margin:20px;">${hobby}</div><div class="objective-text"></div></div></div></div><div class="col-md-8"><div class="work-experience"><h2 class="work-title" id="ed" style="padding-left:20px;background:#4bafde;">Education</h2><div>${edu}</div id="mrk"></div><div class="work-experience"><h2 class="work-title" style="padding-left:20px;background:#4bafde;" id="exp">Workexperience</h2><div style="margin:20px">${exper}</div></div><div class="work-experience"><h2 class="work-title" style="padding-left:20px;background:#4bafde;">Skills</h2><div id="skl">${skill}</div></div><div class="work-experience"><h2 class="work-title" style="padding-left:20px;background:#4bafde;">Projects</h2><div id="p">${pro}</div></div><button class="btn btn-primary" style="width: 20%;" onclick="print()">Print</button></div></div></div></div>`;
+        };
+
+        function changeFont() {
+            document.getElementById("sample").style.fontFamily = "auto";
+        };
+    </script>
+    {{/with}}
+</body>
+
+</html>

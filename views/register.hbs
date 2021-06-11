@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <!-- <title>Transparent Login Form UI</title> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/public/registerStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body style="background-image:url('back2.jpg');background-size:cover;">
+    <div class="bg-img">
+        <div class="content">
+            <header style=>
+                <h4>Sign up</h4>
+            </header>
+            <form action="/register" method="POST" enctype="multipart/form-data">
+                <!--{% csrf_token %}-->
+                <div class="field space">
+                    <span class="far fa-user"></span>
+                    <input type="text" name="name" id="uname" required placeholder="Name">
+                </div>
+                <div class="field space">
+                    <span class="far fa-user"></span>
+                    <input type="email" name="email" id="email" required placeholder="Email">
+                </div>
+                <div class="field space">
+                    <span class="fa fa-lock"></span>
+                    <input type="password" minlength="5" id="pass1" class="pass-key" name="password" required
+                        placeholder="Password" id="Password">
+                    <span class="show"></span>
+                </div>
+                <div class="field space">
+                    <span class="fa fa-lock"></span>
+                    <input type="password" minlength="5" id="pass2" class="pass-key" name="password2" required
+                        placeholder="Confirm Password" id="Confirm Password">
+                    <span class="show"></span>
+                </div>
+                <div class="field space">
+                    <input type="file" id="img" name="image" accept="image/*">
+                </div>
+                <div class="field space">
+                    <input type="submit" value="SUBMIT">
+                </div>
+            </form>
+            <div class="signup">
+                Already have account?
+                <a href="/login">Sign in Now</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sign() {
+            var username = document.getElementById("uname").value;
+            var pass1 = document.getElementById("pass1").value;
+            var pass2 = document.getElementById("pass2").value;
+            var email = document.getElementById("email").value;
+            if (pass1.toString() == pass2.toString()) {
+                alert("Login successfully");
+            }
+            else {
+                alert("Password is not matching");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
